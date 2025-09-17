@@ -1,0 +1,127 @@
+:root {
+    --neon-purple: #7F00FF;
+    --neon-purple-hover: #9400FF;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --light-text: #f8f9fa;
+    --dark-gradient: linear-gradient(to right, #1e1e1e, #121212);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+/* Override Bootstrap's light background */
+.bg-light {
+    background-color: var(--card-bg) !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bigWelcomeAnimation {
+    from { opacity: 0; transform: scale(0.8) translateY(40px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.fade-in-section {
+    opacity: 0; /* Start hidden */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.navbar-brand {
+    color: var(--neon-purple) !important;
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--neon-purple);
+}
+
+#home {
+    min-height: 80vh; /* Make home section taller */
+    background: var(--dark-gradient);
+}
+
+#home h1 {
+    color: var(--neon-purple);
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(127, 0, 255, 0.8);
+    animation: bigWelcomeAnimation 1s ease-out forwards;
+}
+
+#home h2, #home p, #home .btn {
+    opacity: 0; /* Staggered animation setup */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+#home h2 { animation-delay: 0.3s; }
+#home p { animation-delay: 0.5s; }
+#home .btn { animation-delay: 0.7s; }
+
+.btn-primary {
+    background-color: var(--neon-purple);
+    border-color: var(--neon-purple);
+    color: white;
+    padding: 12px 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--neon-purple-hover);
+    border-color: var(--neon-purple-hover);
+    color: white;
+    box-shadow: 0 0 15px rgba(127, 0, 255, 0.7);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(127, 0, 255, 0.6), 0 0 30px rgba(127, 0, 255, 0.4);
+}
+
+.card-title {
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px rgba(127, 0, 255, 0.7);
+}
+
+.card-text {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.card-img-top {
+    border-bottom: 1px solid #333; /* Separator line */
+}
+
+#stats .stat-item {
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#stats .stat-item:hover {
+    transform: translateY(-10px);
+    background-color: #2a2a2a;
+}
+
+#stats h3 {
+    color: var(--neon-purple);
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 0 7px rgba(127, 0, 255, 0.8);
+}
+
+footer {
+    background-color: #000;
+    color: white;
+}
